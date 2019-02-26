@@ -16,7 +16,7 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Pepes blog</a>
+            <a class="navbar-brand" href="#">Dani Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,8 +32,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_register') }}">Register</a>
                     </li>
+
                     {% else %}
                     <li class="nav-item">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('new_post') }}">Crear Post</a>
+                        </li>
                         <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
                     </li>
                         {% if is_granted("ROLE_ADMIN") %}
@@ -58,7 +63,7 @@
     </main>
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+            <span class="text-muted">Copyright 2019 Danieh.</span>
         </div>
     </footer>
 

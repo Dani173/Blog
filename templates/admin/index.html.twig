@@ -1,7 +1,23 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Hola AdminController!{% endblock %}
+
 {% block body %}
-{% if is_granted('ROLE_ADMIN') %}
-    <h1>Pene</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1 >Administración de usuarios</h1><br>
+        <div >
+        {% for user in users %}
+            <a >ID->{{ user.id }}</a>
+            <a href="/admin/{{ user.id }}">{{ user.email }}</a>
+            <a class="btn" href="/admin/edit/{{ user.id }}">Editar</a>
+            <a class="btn " href="/admin/delete/{{ user.id }}"data-id="{{
+            user.id}}">Eliminar usuario</a><br>
+
+        {% endfor %}
+        <a class="btn btn-dark create-user" href="{{ path('app_create') }}">Crear usuario</a>
     {% endif %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/AdminJS.js') }}"></script>
 {% endblock %}

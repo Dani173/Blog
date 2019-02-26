@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hola AdminController!{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>Administration</h1>
+
+
+        <a id="delete" class="btn btn-danger delete-user">Eliminar usuario:{{ id }}</a>
+
+    {% endif %}
+
+{% endblock %}
